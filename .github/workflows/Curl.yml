@@ -28,7 +28,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: curl the New
-        run: curl wttr.in/New
+        run: curl wttr.in/Moon
         
         
         
