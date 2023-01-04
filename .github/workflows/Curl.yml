@@ -17,7 +17,7 @@ on:
 jobs:
  
  # This workflow contains a single job called "build"
-  build:
+  NewCurl:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -28,7 +28,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: curl the New
-        run: curl wtr.in/New
+        run: curl wttr.in/New
         
         
         
