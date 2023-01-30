@@ -1,10 +1,23 @@
 from flask import Flask, request, jsonify
+import csv
 import json
  
 app = Flask(__name__)
 
 
 transacTab = []
+
+#Importation des données depuis le fichier data.csv 
+with open('data.csv') as file:
+	reader = csv.reader(file)
+	header = next(reader)
+	for row in reader:
+		sender,receiver,time,amount=row
+		transacTab.append({"sender":sender,
+		"receiver":receiver,"time":time,
+		"amount":float(amount)})
+
+
 @app.route('/')
 def mytransaction():
 	return "hello"
