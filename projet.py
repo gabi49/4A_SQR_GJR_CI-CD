@@ -13,7 +13,7 @@ def mytransaction():
 @app.route('/transacget', methods=['GET'])
 def affiche():
 	transacTab.sort(key=lambda x: x['time'])
-	return transacTab
+	return jsonify(transacTab)
 
 #Enregistre une nouvelle transaction
 @app.route('/transacpost', methods=['POST'])
@@ -29,13 +29,13 @@ def add():
 	transacTab.append(transaction)
 	return "Transaction reussie"
 	
-#test avec curl --X POST -H "Content-type:application/json" --data-binary "{\"sender\":\"Josepha\", \"receiver\":\"Romeo\", \"time\":\"2021-09-10\", \"amount\":\"100\"}" http://localhost:5000/transacpost
-
+#test avec :  
+#curl --X POST -H "Content-type:application/json" --data-binary "{\"sender\":\"Josepha\", \"receiver\":\"Romeo\", \"time\":\"2021-09-10\", \"amount\":\"100\"}" http://localhost:5000/transacpost
+#curl --X POST -H "Content-type:application/json" --data-binary "{\"sender\":\"Romeo\", \"receiver\":\"Gabriel\", \"time\":\"2013-03-10\", \"amount\":\"100\"}" http://localhost:5000/transacpost
 #curl --X POST -H "Content-type:application/json" --data-binary "{\"sender\":\"Romeo\", \"receiver\":\"Gabriel\", \"time\":\"2013-03-10\", \"amount\":\"100\"}" http://localhost:5000/transacpost
 
-#curl --X POST -H "Content-type:application/json" --data-binary "{\"sender\":\"Romeo\", \"receiver\":\"Gabriel\", \"time\":\"2013-03-10\", \"amount\":\"100\"}" http://localhost:5000/transacpost
 
-
+#retourne la liste des transactions d'une personne
 @app.route("/transacPerson")
 def personSort ():
 	personne = request.args.get("personne")
@@ -45,8 +45,9 @@ def personSort ():
 		return str(sorted_transaction)
 		newTab = str(sorted_transaction)
 	return "Le resultat se trouve dans le console"
+#test avec curl http://localhost:5000/transacPerson?personne=Romeo
 
-
+#retourne le solde d'une personne
 @app.route("/balance")
 def personBalance ():
 	personne = request.args.get("personne")
@@ -55,11 +56,16 @@ def personBalance ():
 		balanceS = sum([t['amount'] for t in personne_transactionSend])
 		personne_transactionReceive = [p for p in transacTab if p['receiver'] == personne]
 		balanceR = sum([t['amount'] for t in personne_transactionReceive])
+		
 		if balanceS > balanceR:
-			return "la solde de {personne} est {balanceR - balanceS}"
+			newbalance = balanceR - balanceS
+			return "la solde de:" + str(personne) + "est:" + str(newbalance) + " " + "veuillez charger votre compte"
 		if balanceS < balanceR:
-			return "la solde de {personne} est {balanceS - balanceR}"
+			newbalance = balanceS - balanceR
+			return "la solde de:" + str(personne) + "est:" + str(newbalance)
 		return "le resultat se trouve dans la console"
+#test avec curl http://localhost:5000/balance?personne=Romeo
+
 
 
 
