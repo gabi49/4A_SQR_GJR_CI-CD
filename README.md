@@ -1,8 +1,8 @@
 # CI-CD
-Ici vous trouverez  le td et le tp
+Vous trouverez ici notre TP. 
 Auteurs
-Massudom Josepha
-Koularambaye Romeo 
+Massudom Josepha,
+Koularambaye Romeo et
 Kameni Gabriel
 
 Specialité SQR
