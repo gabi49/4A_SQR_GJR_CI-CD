@@ -1,3 +1,7 @@
 curl --X POST -H "Content-type:application/json" --data-binary "{\"sender\":\"Josepha\", \"receiver\":\"Romeo\", \"time\":\"2021-09-10\", \"amount\":\"100\"}" http://localhost:5000/transacpost
 curl --X POST -H "Content-type:application/json" --data-binary "{\"sender\":\"Gabriel\", \"receiver\":\"Josepha\", \"time\":\"2022-01-10\", \"amount\":\"100\"}" http://localhost:5000/transacpost
 curl --X POST -H "Content-type:application/json" --data-binary "{\"sender\":\"Romeo\", \"receiver\":\"Gabriel\", \"time\":\"2013-03-10\", \"amount\":\"100\"}" http://localhost:5000/transacpost
+
+curl http://localhost:5000/transacPerson?personne=Romeo
+
+curl http://localhost:5000/balance?personne=Romeo
