@@ -37,7 +37,7 @@ def add():
 		'time' : data['time'],
 		'amount' : data['amount'],
 		'sender' : data['sender'],
-		'reveiver' : data['receiver']
+		'receiver' : data['receiver']
 	}
 	transacTab.append(transaction)
 	return "Transaction reussie"
