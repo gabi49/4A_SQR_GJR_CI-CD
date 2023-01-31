@@ -1,0 +1,170 @@
+openapi: 3.0.3
+info:
+  title: Creation d'un FLASK pour la gestion  CRUD API
+  version: 3.0.3
+  description: |-
+    Nous avons commencé par une definition d'une transaction comme étant un tuplet (P1, P2, t, s), où s est égal à la somme d’argent transférée de la personne P1 à la personne P2 à l’instant t. En utilisant Flask, réaliser une première version de l’API. Pour realiser la transaction, voici une liste des actions  qui doivent être mises à la disposition via un appel HTTP sur API:
+    
+       - Enregistrer une transaction.
+       
+       - Afficher une liste de toutes les transactions dans l’ordre chronologique.
+       
+       - Afficher une liste des transactions dans l’ordre chronologique liées à la personne
+       
+       - Afficher le solde du compte de la personne.
+       - Importer des données depuis un fichier csv.
+
+    
+    
+    Voici le lien github qui mène à notre projet:
+    - [4A_SQR_GJR_CI-CD](https://github.com/gabi49/4A_SQR_GJR_CI-CD)
+    
+ 
+servers:
+  - url: https://petstore3.swagger.io/api/v3
+tags:
+  - name: EndPoint 1 
+    description: Enegistrer une transaction
+    
+      
+  - name: EndPoint 2
+    description: Afficher une liste de toutes les transactions dans l'ordre chronologique
+  - name: EndPoint 3
+    description: Afficher une liste des transactions dans l’ordre chronologique liées à la personne
+  - name: EndPoint 4
+    description:  Afficher une liste des transactions dans l’ordre chronologique liées à la personne
+    
+paths:
+  /EndPoint 1:
+    post:
+      tags:
+        - EndPoint 1
+      summary: Create EndPoint 1
+      description: Enregistrer une transaction.
+      operationId: createUser
+      requestBody:
+        description: Created user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Enregistrement'
+      responses:
+        default:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enregistrement'
+  /EndPoint 2:
+    get:
+      tags:
+        - EndPoint 2
+      summary: Create EndPoint 2
+      description: Afficher une transaction dans l'ordre chrono.
+      operationId: getTransactionByDate
+      parameters:
+        - name: sort
+          in: query
+          description: 'trier la liste'
+          required: true
+          schema:
+            type: string
+            default: date
+        
+      responses:
+       '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enregistrement'
+                
+  /EndPoint 3/{sender}:
+    get:
+      tags:
+        - EndPoint 3
+     
+      summary: Create EndPoint 3
+      description: Afficher une transactions liées à une personne
+      operationId: getPeople
+      parameters:
+        - in: path
+          name: sender
+          description: L'identifiant de la personne dont la correspondance est/sender'
+          required: true
+          schema:
+             type: string
+        - name: sort
+          in: query
+          description: 'trier la liste des transactions'
+          required: true
+          schema:
+              type: string
+              default: date
+        
+      responses:
+       '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enregistrement'
+                
+  /EndPoint 4/{Amount}:
+    get:
+      tags:
+        - EndPoint 4
+      summary: Create EndPoint 4
+      description: L'identifiant du solde de la personne
+      operationId: getSolde
+      parameters:
+          - in: path
+            name: Amount
+            description: Afficher solde de la personne
+            required: true
+            schema:
+               type: string
+          - name: sender
+            in: query
+            description: L'identiant de la personne
+            required: true
+            schema:
+              type: string
+        
+      responses:
+       '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enregistrement'
+          
+    
+  
+    
+components:
+  schemas:
+    Enregistrement:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+          example: 10-12-2023
+        amount:
+          type: number
+          format: int64
+          example: 856.15
+        
+        sender:
+          type: string
+          example: Romeo
+        receiver:
+          type: string
+          example: Gabriel
+          
+     
+  
+  
+        
+   
