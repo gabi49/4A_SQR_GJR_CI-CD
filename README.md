@@ -18,7 +18,7 @@ Nous avons choisi un chemin tout tracé parce cela nous permettait de gagner du 
 comme etant nouveau en CI/CD nous avons opté pour le sujet guidé pour mieux aborder le sujet et approfondir nos connaissances sur le domaine du GIT.
 
 ## Procedure de charmement de données dans l'API à partir d'un fichier.csv
-Avec la methode open('data.csv'), onouvre notre fichier, puis on le parcours et pour chaque ligne de celui_ci, on recupere les elemnts sender, receiver, time et amouunt avec lesquels on va former une nouvelle trasaction et on fait un append() pour l'ajouter à notre listre de transaction.
+Avec la methode open('data.csv'), on ouvre notre fichier, puis on le parcours et pour chaque ligne de celui_ci, on recupere les elements sender, receiver, time et amount avec lesquels on va former une nouvelle trasaction et on fait un append() pour l'ajouter à notre listre de transaction.
 
 
 ![alttext](https://th.bing.com/th/id/OIP.BNlMMtzkKh4G49JGfp83gwHaFj?pid=ImgDet&rs=1)
