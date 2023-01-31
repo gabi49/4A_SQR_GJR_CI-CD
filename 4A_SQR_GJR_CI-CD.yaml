@@ -158,7 +158,7 @@ components:
         
         sender:
           type: string
-          example: Romeo
+          example: JosephaRomeo
         receiver:
           type: string
           example: Gabriel
