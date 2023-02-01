@@ -13,7 +13,6 @@ info:
        
        - Afficher le solde du compte de la personne.
        - Importer des données depuis un fichier csv.
-
     
     
     Voici le lien github qui mène à notre projet:
@@ -21,7 +20,7 @@ info:
     
  
 servers:
-  - url: http://localhost:5000/transacpost
+  - url: https://petstore3.swagger.io/api/v3
 tags:
   - name: EndPoint 1 
     description: Enegistrer une transaction
@@ -167,4 +166,4 @@ components:
   
   
         
-   
+          
