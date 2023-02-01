@@ -1,22 +1,29 @@
-name: Build Application
+name: Build and Deploy Flask App
 
 on:
   push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-    
-  workflow_dispatch:
+    branches: [ master ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-    - name: Build the application
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install dependencies
       run: |
-        # Insert build command here
-        # Example:
-        make build
+        pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Build the Flask App
+      run: |
+        export FLASK_APP=nom_de_votre_application
+        export FLASK_ENV=development
+        flask run
