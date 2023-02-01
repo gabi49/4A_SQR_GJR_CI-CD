@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 
 transacTab = []
+Hash_tab = []
 
 #Importation des données depuis le fichier data.csv 
 with open('data.csv') as file:
@@ -20,6 +21,7 @@ with open('data.csv') as file:
 		"receiver":receiver,"time":time,
 		"amount":float(amount),
 		"hash":hashlib.sha256((sender+ receiver+amount).encode()).hexdigest()})
+		Hash_tab.append(hashlib.sha256((sender+ receiver+amount).encode()).hexdigest())
 		
 
 @app.route('/')
@@ -86,6 +88,18 @@ def personBalance ():
 #test avec curl http://localhost:5000/balance?personne=Romeo
 
 
+#Vérification de l'intégrité des transactions
+@app.route('/test_integ' , methods = ['GET'])
+def f():
+	for i in range(len(transacTab)):
+		t = hashlib.sha256((transacTab[i]['receiver'] + transacTab[i]['sender'] + str(transacTab[i]['amount'])).encode()).hexdigest()
+		if t != Hash_tab[i]:
+	  		return "True"
+		       		
+		else:
+			return "False"
+				
+	return " "
 
 
 
