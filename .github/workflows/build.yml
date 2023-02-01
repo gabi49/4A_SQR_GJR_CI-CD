@@ -13,4 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
-      - run: python projet.py build
+        with:
+          python-version: 3.8
+ 
+      - name: Install Flask
+        run : python -m pip install flask
+      
