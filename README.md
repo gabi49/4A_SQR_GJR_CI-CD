@@ -30,6 +30,7 @@ pousser l’image de l’API avec en tag la version semver spécifiée: [![Docke
 
 Avec la méthode open('data.csv'), on ouvre notre fichier, puis on le parcours et pour chaque ligne de celui ci, on récupère les éléments sender, receiver, time et amount avec lesquels on va former une nouvelle transaction et on fait un append() pour l'ajouter à notre liste de transactions.
 
+### Fichier swagger.yaml : https://github.com/gabi49/4A_SQR_GJR_CI-CD/blob/main/4A_SQR_GJR_CI-CD.yaml
 
 ## Anticipation du déploiement continu (CD)
 
