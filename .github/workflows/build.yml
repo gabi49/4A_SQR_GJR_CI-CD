@@ -1,12 +1,12 @@
-name: Build and Deploy Flask App
+name: Build
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  push: 
+    branches: 
+      -main
+  pull_request: 
+    branches: 
+      -main
 
 jobs:
   build:
@@ -14,20 +14,14 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
+    - name: Setup Python
+      uses: actions/setup-python@v4
       with:
         python-version: 3.x
 
-    - name: Install dependencies
+    - name: Run Python script
       run: |
-        pip install --upgrade pip
-        # pip install -r requirements.txt
-
-    - name: Build the Flask App
-      run: |
-        export FLASK_APP=projet
-        export FLASK_ENV=development
-        flask run
+        echo "print('Hello there!')" > projet.py
+        python projet.py
