@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import csv
 import json
 import sys
+import hashlib
  
 app = Flask(__name__)
 
@@ -13,12 +14,13 @@ with open('data.csv') as file:
 	reader = csv.reader(file)
 	header = next(reader)
 	for row in reader:
-		#sender,receiver,time,amount=row
-		print(row)
-		#transacTab.append({"sender":sender,
-		#"receiver":receiver,"time":time,
-		#"amount":float(amount)})
-
+		sender,receiver,time,amount=row
+		#print(row)
+		transacTab.append({"sender":sender,
+		"receiver":receiver,"time":time,
+		"amount":float(amount),
+		"hash":hashlib.sha256((sender+ receiver+Amount).encode()).hexdigest()})
+		
 
 @app.route('/')
 def mytransaction():
@@ -39,7 +41,9 @@ def add():
 		'time' : data['time'],
 		'amount' : data['amount'],
 		'sender' : data['sender'],
-		'receiver' : data['receiver']
+		'receiver' : data['receiver'],
+		'hash':hashlib.sha256((data['sender'] + data['receiver'] + data['amount']).encode()).hexdigest()
+		
 	}
 	transacTab.append(transaction)
 	return "Transaction reussie"
