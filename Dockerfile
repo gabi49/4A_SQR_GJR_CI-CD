@@ -11,4 +11,5 @@ ENV FLASK_DEBUG=True
 
 EXPOSE 5000
 
+CMD ["export", "FLASK_APP=projet.py"]
 CMD ["flask", "run"]
