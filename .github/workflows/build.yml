@@ -13,15 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - run: python projet.py
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.x
 
-    - name: Run Python script
-      run: |
-        echo "print('Hello there!')" > projet.py
-        python projet.py
+      - name: Run Python script
+        run: echo Hello there!
