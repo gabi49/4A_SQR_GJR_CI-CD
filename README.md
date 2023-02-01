@@ -2,6 +2,7 @@
 Vous trouverez ici notre TP.
 
 [![Build](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build.yml/badge.svg)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build.yml)
+[![Image Build](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build_Docker.yml/badge.svg)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build_Docker.yml)
 
 Auteurs : 
 Massudom Josepha,
