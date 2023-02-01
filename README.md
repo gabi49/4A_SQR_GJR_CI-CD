@@ -15,7 +15,7 @@ Dans ce projet, nous allons utiliser le langage *Python* car c'est un langage fl
 Etant donné que nous découvrons l'intégration continue et le déploiement continu (CI/CD), nous avons opté pour le sujet guidé afin de le réaliser en totalité au vu du fait que les instructions sont bien définies et mieux explicites.
 
 
-## Préparation de l'intégration continue
+## Préparation de l'intégration continue (CI)
 Ici, nous allons créer différentes github actions.
 
 Badge de la github action pour une action déclenchée à chaque changement pour builder l’application: [![Build](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build.yml/badge.svg)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build.yml)
@@ -30,6 +30,12 @@ pousser l’image de l’API avec en tag la version semver spécifiée: [![Docke
 
 Avec la méthode open('data.csv'), on ouvre notre fichier, puis on le parcours et pour chaque ligne de celui ci, on récupère les éléments sender, receiver, time et amount avec lesquels on va former une nouvelle transaction et on fait un append() pour l'ajouter à notre liste de transactions.
 
+
+## Anticipation du déploiement continu (CD)
+
+Nous publions  automatiquement les nouvelles versions dans un registre de conteneur Google (GCR).
+
+[![Docker push GCR](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml/badge.svg)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml)
 
 ### Github actions
 
