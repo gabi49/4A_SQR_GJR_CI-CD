@@ -1,8 +1,4 @@
 # CI-CD
-Vous trouverez ici notre TP.
-
-[![Build](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build.yml/badge.svg)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build.yml)
-[![Image Build](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build_Docker.yml/badge.svg?branch=main)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build_Docker.yml)
 
 Auteurs : 
 Massudom Josepha,
@@ -10,6 +6,12 @@ Koularambaye Romeo et
 Kameni Gabriel
 
 Specialité SQR
+Vous trouverez ici notre TP.
+
+
+Badge de la github pour une déclenchée à chaque changement pour builder l’application : [![Build](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build.yml/badge.svg)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build.yml)
+
+Badge de la github actiion pour utiliser le fichier Dockerfile pour créer une image : [![Image Build](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build_Docker.yml/badge.svg?branch=main)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/build_Docker.yml)
 
 ## Nous avons choisi le Sujet guidé : Un chemin tout tracé
 
