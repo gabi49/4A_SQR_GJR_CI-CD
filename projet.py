@@ -19,7 +19,7 @@ with open('data.csv') as file:
 		transacTab.append({"sender":sender,
 		"receiver":receiver,"time":time,
 		"amount":float(amount),
-		"hash":hashlib.sha256((sender+ receiver+Amount).encode()).hexdigest()})
+		"hash":hashlib.sha256((sender+ receiver+amount).encode()).hexdigest()})
 		
 
 @app.route('/')
