@@ -40,10 +40,17 @@ Nous publions  automatiquement les nouvelles versions dans un registre de conten
 
 
 ## Amélioration de l'API
+
 Déployons une release publique de l’API à ce stade via GitHub avec un tag équivalent à la bonne version sémantique
 
 [![Docker push GCR](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml/badge.svg)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml)
 
+Vérifions l’intégrité des données envoyées en recalculant les hashs à partir des données envoyées et en les comparant avec les hashs stockés
+précédemment: 
+
+[![Docker push GCR](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml/badge.svg)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml)
+
+Corrigeons le calcul de hash en prenant en compte le paramètre t : la date de transfert:
 
 
 #### Github actions
