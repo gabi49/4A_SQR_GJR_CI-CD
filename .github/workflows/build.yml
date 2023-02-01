@@ -24,6 +24,6 @@ jobs:
 
     - name: Build the Flask App
       run: |
-        export FLASK_APP=nom_de_votre_application
+        export FLASK_APP=projet
         export FLASK_ENV=development
         flask run
