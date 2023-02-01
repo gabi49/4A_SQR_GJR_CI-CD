@@ -21,7 +21,7 @@ info:
     
  
 servers:
-  - url: https://petstore3.swagger.io/api/v3
+  - url: http://localhost:5000/transacpost
 tags:
   - name: EndPoint 1 
     description: Enegistrer une transaction
