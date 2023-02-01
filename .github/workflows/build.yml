@@ -2,11 +2,9 @@ name: Build
 
 on:
   push: 
-    branches: 
-      -main
+    branches: [ "main" ]
   pull_request: 
-    branches: 
-      -main
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -15,8 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
-      - run: python projet.py
-
-
-      - name: Run Python script
-        run: echo Hello there!
+      - run: python projet.py build
