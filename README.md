@@ -52,6 +52,7 @@ précédemment:
 
 Corrigeons le calcul de hash en prenant en compte le paramètre t : la date de transfert:
 
+[![Docker push GCR](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml/badge.svg)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml)
 
 #### Github actions
 
