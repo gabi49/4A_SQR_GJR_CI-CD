@@ -12,11 +12,11 @@ with open('data.csv') as file:
 	reader = csv.reader(file)
 	header = next(reader)
 	for row in reader:
-		sender,receiver,time,amount=row
+		#sender,receiver,time,amount=row
 		print(row)
-		transacTab.append({"sender":sender,
-		"receiver":receiver,"time":time,
-		"amount":float(amount)})
+		#transacTab.append({"sender":sender,
+		#"receiver":receiver,"time":time,
+		#"amount":float(amount)})
 
 
 @app.route('/')
