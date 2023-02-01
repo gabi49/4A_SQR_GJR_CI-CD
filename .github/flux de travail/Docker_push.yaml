@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v3.2.0
         with:
           # Emplacement du Dockerfile
-          file: tds/correction_td3-4/Dockerfile
+          file:  Dockerfile
           tags: eu.gcr.io/esirem/4a_sqr/josepha_gabriel_romeo:${{ github.ref_name }}
           # Emplacement des fichiers 
           context: "."
