@@ -37,7 +37,15 @@ Nous publions  automatiquement les nouvelles versions dans un registre de conten
 
 [![Docker push GCR](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml/badge.svg)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml)
 
-### Github actions
+
+## Amélioration de l'API
+Déployons une release publique de l’API à ce stade via GitHub avec un tag équivalent à la bonne version sémantique
+
+[![Docker push GCR](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml/badge.svg)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml)
+
+
+
+#### Github actions
 
 ![alttext](https://th.bing.com/th/id/OIP.BNlMMtzkKh4G49JGfp83gwHaFj?pid=ImgDet&rs=1)
 
