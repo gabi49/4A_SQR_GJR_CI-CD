@@ -20,8 +20,8 @@ with open('data.csv') as file:
 		transacTab.append({"sender":sender,
 		"receiver":receiver,"time":time,
 		"amount":float(amount),
-		"hash":hashlib.sha256((sender+ receiver+amount).encode()).hexdigest()})
-		Hash_tab.append(hashlib.sha256((sender+ receiver+amount).encode()).hexdigest())
+		"hash":hashlib.sha256((sender+ receiver+amount+time).encode()).hexdigest()})
+		Hash_tab.append(hashlib.sha256((sender+ receiver+amount+time).encode()).hexdigest())
 		
 
 @app.route('/')
@@ -44,7 +44,7 @@ def add():
 		'amount' : data['amount'],
 		'sender' : data['sender'],
 		'receiver' : data['receiver'],
-		'hash':hashlib.sha256((data['sender'] + data['receiver'] + data['amount']).encode()).hexdigest()
+		'hash':hashlib.sha256((data['sender'] + data['receiver'] + data['amount'] + data['time']).encode()).hexdigest()
 		
 	}
 	transacTab.append(transaction)
@@ -92,7 +92,7 @@ def personBalance ():
 @app.route('/test_integ' , methods = ['GET'])
 def f():
 	for i in range(len(transacTab)):
-		t = hashlib.sha256((transacTab[i]['receiver'] + transacTab[i]['sender'] + str(transacTab[i]['amount'])).encode()).hexdigest()
+		t = hashlib.sha256((transacTab[i]['receiver'] + transacTab[i]['sender'] + str(transacTab[i]['amount']) + transacTab[i]['time']).encode()).hexdigest()
 		if t != Hash_tab[i]:
 	  		return "True"
 		       		
@@ -115,5 +115,4 @@ if __name__ == '__main__':
              exit(1)
 
     app.run(debug=True)
-
 
