@@ -54,6 +54,8 @@ Corrigeons le calcul de hash en prenant en compte le paramètre t : la date de t
 
 [![Docker push GCR](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml/badge.svg)](https://github.com/gabi49/4A_SQR_GJR_CI-CD/actions/workflows/Docker_push.yml)
 
+[![Projet terminé !](https://img.shields.io/badge/projet-termin%C3%A9-green.svg)]
+
 #### Github actions
 
 ![alttext](https://th.bing.com/th/id/OIP.BNlMMtzkKh4G49JGfp83gwHaFj?pid=ImgDet&rs=1)
